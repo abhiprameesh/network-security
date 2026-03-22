@@ -1,4 +1,5 @@
 import sys
+from networksecurity.logging import logger
 
 class NetworkSecurityException(Exception):
     def __init__(self,error_message,error_details:sys):
@@ -13,6 +14,8 @@ class NetworkSecurityException(Exception):
     
 if __name__=="__main__":
     try:
+        logger.logging.info("Enter the try block")
         a=1/0
+        print("This will not be printed",a)
     except Exception as e:
         raise NetworkSecurityException(e,sys)
